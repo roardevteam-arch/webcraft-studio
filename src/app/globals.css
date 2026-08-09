@@ -18,7 +18,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: theme('colors.dark.200');
+  }
+  .dark * {
+    border-color: theme('colors.dark.700');
   }
   body {
     @apply bg-white dark:bg-dark-950 text-dark-900 dark:text-dark-50 antialiased;
@@ -105,20 +108,40 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark-100 dark:bg-dark-900;
+  background-color: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background-color: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-dark-300 dark:bg-dark-600 rounded-full;
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-dark-400 dark:bg-dark-500;
+  background-color: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
 }
 
 /* Selection */
 ::selection {
-  @apply bg-primary-500/30 text-primary-900 dark:text-primary-100;
+  background-color: rgba(14, 165, 233, 0.3);
+  color: #0c4a6e;
+}
+
+.dark ::selection {
+  background-color: rgba(14, 165, 233, 0.3);
+  color: #e0f2fe;
 }
 
 /* Tailwind v4 compatibility for bg-linear-to-* */
